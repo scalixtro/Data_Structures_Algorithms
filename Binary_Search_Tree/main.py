@@ -133,5 +133,42 @@ def bfs_test() -> None:
     return None
 
 
+def dfs_pre_order_test() -> None:
+    my_tree = BinarySearchTree()
+    my_tree.insert(47)
+    my_tree.insert(21)
+    my_tree.insert(76)
+    my_tree.insert(18)
+    my_tree.insert(27)
+    my_tree.insert(52)
+    my_tree.insert(82)
+
+    print(my_tree.dfs_pre_order())
+    """
+    EXPECTED OUTPUT:
+    ----------------
+    [47, 21, 18, 27, 76, 52, 82]
+    """
+    return None
+
+
+def dfs_post_order_test() -> None:
+    my_tree = BinarySearchTree()
+    my_tree.insert(47)
+    my_tree.insert(21)
+    my_tree.insert(76)
+    my_tree.insert(18)
+    my_tree.insert(27)
+    my_tree.insert(52)
+    my_tree.insert(82)
+
+    print(my_tree.dfs_post_order())
+    """
+    EXPECTED OUTPUT:
+    ----------------
+    [18, 27, 21, 52, 82, 76, 47]
+    """
+    return None
+
 if __name__ == '__main__':
-    bfs_test()
+    dfs_post_order_test()
