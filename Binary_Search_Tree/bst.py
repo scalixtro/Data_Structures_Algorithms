@@ -148,3 +148,23 @@ class BinarySearchTree:
         Deletes a Node with a given value recursively
         """
         return self.__delete_node(self.root, value)
+
+    def BFS(self):
+        """Breadth First Search algorithm"""
+        current_node = self.root
+        queue = []
+        results = []
+        if current_node is not None:
+            queue.append(current_node)
+        while len(queue) > 0:
+            # Point to the first element in queue
+            current_node = queue[0]
+            # Add the element at the start of the queue and remove
+            results.append(queue.pop(0).value)
+            # Add left element if is not None
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            # Append right node if is not None
+            if current_node.right is not None:
+                queue.append(current_node.right)
+        return results

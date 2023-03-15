@@ -109,6 +109,29 @@ def delete_test() -> None:
     print("Right-node.right",  my_tree.root.right.right)
     return None
 
+def bfs_test() -> None:
+    list_nums = [21, 76, 18, 52, 82]
+    my_tree = BinarySearchTree(47)
+    """
+    Create a tree:
+             47
+           /    \
+          21    76
+         / \    / \
+        18     52 82
+    """
+    for num in list_nums:
+        my_tree.r_insert(num)
+    print("TREE CREATED")
+    print("""         
+             47
+           /    \\
+          21    76
+         / \    / \\
+        18     52 82\n""")
+    print("Tree traversal: ", my_tree.BFS())
+    return None
+
 
 if __name__ == '__main__':
-    delete_test()
+    bfs_test()
