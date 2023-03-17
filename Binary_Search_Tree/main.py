@@ -170,5 +170,23 @@ def dfs_post_order_test() -> None:
     """
     return None
 
+def dfs_in_order_test() -> None:
+    my_tree = BinarySearchTree()
+    my_tree.insert(47)
+    my_tree.insert(21)
+    my_tree.insert(76)
+    my_tree.insert(18)
+    my_tree.insert(27)
+    my_tree.insert(52)
+    my_tree.insert(82)
+
+    print(my_tree.dfs_in_order())
+    """
+    EXPECTED OUTPUT:
+    ----------------
+    [18, 21, 27, 47, 52, 76, 82]
+    """
+    return None
+
 if __name__ == '__main__':
-    dfs_post_order_test()
+    dfs_in_order_test()

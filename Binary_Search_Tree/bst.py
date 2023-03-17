@@ -171,7 +171,7 @@ class BinarySearchTree:
     
     def dfs_pre_order(self):
         """
-        Depth First Search: Pre-Order algorithm.
+        Depth First Search: Recursive tree traversal Pre-Order algorithm.
         """
         results = []
         
@@ -187,7 +187,7 @@ class BinarySearchTree:
     
     def dfs_post_order(self):
         """
-        Depth First Search: Post-Order algorithm.
+        Depth First Search: Recursive tree traversal Post-Order algorithm.
         """
         results = []
         
@@ -202,4 +202,22 @@ class BinarySearchTree:
             results.append(current_node.value)
         if self.root is not None:
             traverse(self.root)
+        return results
+    
+    def dfs_in_order(self):
+        """
+        Depth First Search: Recursive tree traversal In-Order algorithm.
+        """
+        results = []
+        def traverse(current_node):
+            # First traverse through the left branch of a node if exists
+            if current_node.left is not None:
+                traverse(current_node.left)
+            # Add the current node (all the right branch nodes are > node)
+            results.append(current_node.value)
+            # Traverse through the right branch of the node
+            if current_node.right is not None:
+                traverse(current_node.right)
+        # Start from the root
+        traverse(self.root)
         return results
